@@ -35,6 +35,22 @@ a {
 .dark-blue {
   background-color: #2979ff;
 }
+.primary-color {
+  color: #2979ff;
+}
+nav {
+  border-color: #eef0f2bc;
+  border-width: 0 0 01px 0;
+}
+.line {
+  border-color: #eef0f2bc;
+  border-width: 0 0 01.5px 0;
+}
+.button-off {
+  border: 1px solid #2979ff;
+  background-color: transparent;
+  color: #2979ff;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

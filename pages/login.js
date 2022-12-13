@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-
+import { GiElectric } from "react-icons/gi";
 export default function Home() {
   return (
     <div>
@@ -11,10 +11,17 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="flex p-20 items-center justify-center">
+        <div className="flex p-20 flex-col items-center justify-center">
+          {" "}
+          <div className="flex mb-8 flex-row  items-center">
+            <GiElectric color="#2979ff" size={35} />
+            <h1 className="text-3xl primary-color font-semibold">
+              Kerala State Electricity Board
+            </h1>
+          </div>
           <div className="box p-10 w-2/6 flex flex-col  items-center font-white  bg-white rounded-md">
             <h2 className=" text-3xl text-gray-800 font-medium">Admin Login</h2>
-            <p className="text text-lg">Lorem ipsum consectetur</p>
+
             <div className="flex mt-4  w-full flex-col">
               <p className="text text-lg font-medium">User Name</p>
               <input
@@ -32,7 +39,7 @@ export default function Home() {
               />
             </div>
             <p className="text-red-500 mt-5 text-lg ">error text!</p>
-            <button className="text-xl p-2 text-white font-medium bg-blue-400 dark-blue w-full mt-5">
+            <button className="text-xl rounded-sm p-2 text-white font-medium bg-blue-400 dark-blue w-full mt-1">
               Login Now
             </button>
           </div>
