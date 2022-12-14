@@ -4,14 +4,14 @@ import { GiElectric } from "react-icons/gi";
 import { CiBarcode, CiFaceMeh, CiChat2 } from "react-icons/ci";
 import Bill from "../components/bill/bill";
 import { useState } from "react";
-import Adduser from "../components/addUser/adduser";
-import Complaints from "../components/complaints/complaints";
+import Complaints from "../components/regcomplaints/complaints";
+
 export default function Dashboard() {
   const [selectOption, setSelectOption] = useState(0);
   ////Used for navigation bar selection
   //0 add bill
-  //1 add user
-  //2 view complaints
+
+  //1 view complaints
   return (
     <div>
       <Head>
@@ -52,7 +52,6 @@ export default function Dashboard() {
             </ul>
           </nav>
           {selectOption == 0 ? <Bill /> : ""}
-          {selectOption == 1 ? <Adduser /> : ""}
           {selectOption == 2 ? <Complaints /> : ""}
         </div>
       </main>

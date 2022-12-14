@@ -53,9 +53,19 @@ export default function Bill() {
                   />
                 </div>
               </div>
+              <div className="bill-line flex justify-end mt-4 w-full">
+                <div className="flex flex-row p-4  mt-2">
+                  <p className="text text-lg font-medium">
+                    Total Payable Amount:
+                  </p>
+                  <p className="text-gray-700 text-lg font-medium">
+                    144 Rupees
+                  </p>
+                </div>
+              </div>
             </div>
             <button className="text-sm hover:opacity-80 transition-all rounded-sm  w-40 p-2 text-white font-medium bg-blue-400 dark-blue  mt-4">
-              Generate Bill
+              Pay Bill
             </button>
           </div>
         </div>
