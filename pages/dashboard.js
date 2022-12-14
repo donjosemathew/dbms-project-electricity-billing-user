@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { GiElectric } from "react-icons/gi";
-import { CiCreditCard2, CiFaceMeh, CiFolderOn } from "react-icons/ci";
+import { CiBarcode, CiFaceMeh, CiChat2 } from "react-icons/ci";
 import Bill from "../components/bill/bill";
 import { useState } from "react";
 import Adduser from "../components/addUser/adduser";
@@ -36,26 +36,18 @@ export default function Dashboard() {
                 }}
                 className="flex  cursor-pointer mr-4 text-gray-800 flex-row items-center justify-center text-sm font-bold"
               >
-                <CiCreditCard2 size={25} className="mr-2" />
-                Add Bill
+                <CiBarcode size={25} className="mr-2" />
+                View Bill
               </li>
-              <li
-                onClick={() => {
-                  setSelectOption(1);
-                }}
-                className="flex mr-4 cursor-pointer text-gray-800 flex-row items-center justify-center text-sm font-bold"
-              >
-                <CiFaceMeh size={25} className="mr-2" />
-                Add Users
-              </li>
+
               <li
                 onClick={() => {
                   setSelectOption(2);
                 }}
                 className="flex mr-4 cursor-pointer text-gray-800 flex-row items-center justify-center text-sm font-bold"
               >
-                <CiFolderOn size={25} className="mr-2" />
-                View Complaints
+                <CiChat2 size={25} className="mr-2" />
+                Register Complaints
               </li>
             </ul>
           </nav>

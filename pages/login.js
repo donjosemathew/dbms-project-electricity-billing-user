@@ -20,7 +20,7 @@ export default function Home() {
             </h1>
           </div>
           <div className="box p-10 w-2/6 flex flex-col  items-center font-white  bg-white rounded-md">
-            <h2 className=" text-3xl text-gray-800 font-medium">Admin Login</h2>
+            <h2 className=" text-3xl text-gray-800 font-medium">User Login</h2>
 
             <div className="flex mt-4  w-full flex-col">
               <p className="text text-lg font-medium">User Name</p>
