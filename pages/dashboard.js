@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { GiElectric } from "react-icons/gi";
+import { useSelector, useDispatch } from "react-redux";
 import { CiBarcode, CiFaceMeh, CiChat2 } from "react-icons/ci";
 import Bill from "../components/bill/bill";
 import { useState } from "react";
@@ -12,6 +13,9 @@ export default function Dashboard() {
   //0 add bill
 
   //1 view complaints
+
+  const user = useSelector((state) => state.auth.consumernumber);
+
   return (
     <div>
       <Head>
@@ -51,8 +55,8 @@ export default function Dashboard() {
               </li>
             </ul>
           </nav>
-          {selectOption == 0 ? <Bill /> : ""}
-          {selectOption == 2 ? <Complaints /> : ""}
+          {selectOption == 0 ? <Bill user={user} /> : ""}
+          {selectOption == 2 ? <Complaints user={user} /> : ""}
         </div>
       </main>
     </div>

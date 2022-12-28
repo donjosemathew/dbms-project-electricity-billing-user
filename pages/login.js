@@ -5,8 +5,11 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Loader from "../components/loader/loader";
 import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { authenticate } from "../auth/authSlice";
 export default function Home() {
   const [error, setError] = useState("");
+  const dispatch = useDispatch();
   const [authenticating, setAuthenticating] = useState(false);
   const router = useRouter();
   const [data, setData] = useState({
@@ -28,6 +31,7 @@ export default function Home() {
       })
         .then((e) => {
           if (e.data[0]) {
+            dispatch(authenticate(e.data[0].consumer_id));
             router.push("/dashboard");
           } else {
             setError("Something went wrong!");
