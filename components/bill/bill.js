@@ -29,6 +29,7 @@ export default function Bill({ user }) {
   };
   const latestBill = () => {
     let today = new Date();
+    console.log(today);
     setDate(today);
     getBill();
   };
