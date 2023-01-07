@@ -8,17 +8,21 @@ export default function Bill({ user }) {
   const [loading, setLoading] = useState(false);
   const getBill = () => {
     const date2 = new Date(date);
-    console.log(date2.getFullYear(), date2.getMonth() + 1);
+    console.log(
+      date2.getFullYear(),
+      date2.getMonth() + 1,
+      `https://dbms-api.vercel.app/bills/consumer/${user}`
+    );
     if (date2.getFullYear() && date2.getMonth() + 1) {
       setLoading(true);
-      axios
-        .get(`https://dbms-api.vercel.app/bills/${user}`, {
-          month: date2.getMonth() + 1,
-          year: date2.getFullYear(),
-        })
+      axios({
+        method: "get",
+        url: `https://dbms-api.vercel.app/bills/consumer/${user}`,
+      })
         .then((response) => {
           setLoading(false);
-          console.log(response.data[0]);
+          console.log(user);
+          console.log(response);
           setData(response.data[0]);
         })
         .catch((e) => {

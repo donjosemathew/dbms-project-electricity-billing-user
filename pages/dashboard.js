@@ -4,8 +4,9 @@ import { GiElectric } from "react-icons/gi";
 import { useSelector, useDispatch } from "react-redux";
 import { CiBarcode, CiFaceMeh, CiChat2 } from "react-icons/ci";
 import Bill from "../components/bill/bill";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Complaints from "../components/regcomplaints/complaints";
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
   const [selectOption, setSelectOption] = useState(0);
@@ -15,7 +16,12 @@ export default function Dashboard() {
   //1 view complaints
 
   const user = useSelector((state) => state.auth.consumernumber);
-
+  const router = useRouter();
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+    }
+  }, [user]);
   return (
     <div>
       <Head>
